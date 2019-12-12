@@ -12,7 +12,7 @@ by the GetCocktailList function. Default value of ID is set to "11007" (margrita
 
 \item{precise}{parameter precise ask if the user want the result in precise format, if
 set to be TRUE, the return information will only include drink id, name, tag, type and
-English instructions}
+two key ingredients}
 }
 \description{
 This function allows user to search for cocktail information based on

@@ -1,0 +1,78 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# CocktailDBR
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of CocktailDBR is to ...
+
+## Installation
+
+You can install the released version of CocktailDBR from [Yuhua Ding's repository](https://github.com/yuhuading/ydcolumbia/tree/master/CocktailDBR) with:
+
+```{r}
+devtools::install_github("yuhuading/ydcolumbia/CocktailDBR")
+```
+
+
+CocktailDBR allows user to pull cocktail info from TheCocktailDB API and search for cocktails based on cocktail ID from the API.
+The package incldues 5 functions and 1 dataset. `GetCocktailList`, `GetCocktailInfo` and `GetAllCocktails` functions directly access TheCocktailDB API and returns query result in data.frames. Meanwhile `CocktailSummary` and `GetInstruction` are based on the dataset `allCocktails` included in the package. The datasset `allCocktails`includes 402 cocktails' ID, names and all other information available from the API and the dataset will be updated occasionally by the package creator. 
+
+The cocktail database is an open sourced database of drinks and cocktails along with ingredients from around the world. The database currently contains 590 drinks and 475 total ingredients. The database is in general free to use but you can obtain access to more functionality with a fairly cheap subscription [here](https://www.patreon.com/thedatadb). The test API key is "1". This API package only used API endpoints that is free of access. 
+
+## Examples
+
+Below are the examples of function uses in CocktailDBR
+
+### Example for `GetCocktailList`
+
+```{r}
+GetCocktailList(all = FALSE, firstLetter = "b")
+GetCocktailList(all = FALSE, firstLetter = "x")
+head(GetCocktailList(all = TRUE), 10)
+```
+
+### Example for `GetCocktailInfo`
+
+```{r}
+as_tibble(GetCocktailInfo(15266, precise = FALSE))
+as_tibble(GetCocktailInfo(14167, precise = TRUE))
+as_tibble(GetCocktailInfo())
+```
+
+### Example for `GetAllCocktails`
+
+```{r}
+as_tibble(head(GetAllCocktails(), 10))
+as_tibble(head(GetAllCocktails(precise = TRUE),10))
+```
+
+### Example for `CocktailSummary`
+
+```{r}
+CocktailSummary("Ingredients")
+CocktailSummary("Weirdos") ## example of invalid input
+```
+
+### Example for `GetInstruction`
+
+```{r}
+as_tibble(GetInstruction(language = "DE"))
+as_tibble(GetInstruction(id = "15266", language = "EN"))
+as_tibble(GetInstruction(id = c("17840", "15266")))
+```
+

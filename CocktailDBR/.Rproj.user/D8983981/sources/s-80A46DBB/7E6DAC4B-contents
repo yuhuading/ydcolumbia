@@ -1,0 +1,61 @@
+---
+title: "CocktailDBR-vignette"
+author: "Yuhua Ding"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{CocktailDBR-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Guide to CocktailDBR package - a R Package for [The Cocktail Database](https://www.thecocktaildb.com/api.php)
+  
+CocktailDBR allows user to pull cocktail info from TheCocktailDB API and search for cocktails based on cocktail ID from the API.
+The package incldues 5 functions and 1 dataset. `GetCocktailList`, `GetCocktailInfo` and `GetAllCocktails` functions directly access TheCocktailDB API and returns query result in data.frames. Meanwhile `CocktailSummary` and `GetInstruction` are based on the dataset `allCocktails` included in the package. The datasset `allCocktails`includes 402 cocktails' ID, names and all other information available from the API and the dataset will be updated occasionally by the package creator. 
+
+The cocktail database is an open sourced database of drinks and cocktails along with ingredients from around the world. The database currently contains 590 drinks and 475 total ingredients. The database is in general free to use but you can obtain access to more functionality with a fairly cheap subscription [here](https://www.patreon.com/thedatadb). The test API key is "1". This API package only used API endpoints that is free of access. 
+
+```{r message = FALSE}
+library(CocktailDBR)
+library(dplyr)
+```
+
+### Illustrations for `GetCocktailList`
+
+```{r}
+GetCocktailList(all = FALSE, firstLetter = "b")
+GetCocktailList(all = FALSE, firstLetter = "x")
+head(GetCocktailList(all = TRUE), 10)
+```
+
+### Illustrations for `GetCocktailInfo`
+
+```{r}
+as_tibble(GetCocktailInfo(15266, precise = FALSE))
+as_tibble(GetCocktailInfo(14167, precise = TRUE))
+as_tibble(GetCocktailInfo())
+```
+
+### Illustrations for `GetAllCocktails`
+
+```{r}
+as_tibble(head(GetAllCocktails(), 10))
+as_tibble(head(GetAllCocktails(precise = TRUE),10))
+```
+
+### Illustrations for `CocktailSummary`
+
+```{r}
+CocktailSummary("Ingredients")
+CocktailSummary("Weirdos") ## example of invalid input
+```
+
+### Illustrations for `GetInstruction`
+
+```{r}
+as_tibble(GetInstruction(language = "DE"))
+as_tibble(GetInstruction(id = "15266", language = "EN"))
+as_tibble(GetInstruction(id = c("17840", "15266")))
+```
+
