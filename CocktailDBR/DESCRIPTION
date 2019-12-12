@@ -13,6 +13,8 @@ Description: TheCocktailDB API does not require API key to access.
              cocktails from pulled from the API to save time for users. There are several
              API endpoints require Patreon support to access, please check API website
              thecocktaildb.com/api.php for more detail. 
+URL:  https://github.com/yuhuading/ydcolumbia/tree/master/CocktailDBR 
+BugReports: https://github.com/yuhuading/ydcolumbia/issues
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
