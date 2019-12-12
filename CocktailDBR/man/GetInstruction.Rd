@@ -4,7 +4,7 @@
 \alias{GetInstruction}
 \title{Obtain instruction for certain cocktails}
 \usage{
-GetInstruction(id = "15266", language = "EN")
+GetInstruction(id = "15266", language = "EN", precise = TRUE)
 }
 \arguments{
 \item{id}{asks user to enter cocktail IDs to search, the cocktail IDs are numberical IDs
@@ -14,6 +14,10 @@ c() command to search for multiple cocktails at a time}
 \item{language}{This parameter allows user to choose the instruction language, allowed entries
 include English (EN), Spanish (ES), German (DE), French (FR) and Chinese (ZH). The parameter is
 defaulted to English (EN)}
+
+\item{precise}{parameter precise ask if the user want the result in precise format, if
+set to be TRUE, the return information will only include drink id, name, category, type
+glass used and instruction}
 }
 \description{
 This function allows user to obtain instruction for certain cocktails

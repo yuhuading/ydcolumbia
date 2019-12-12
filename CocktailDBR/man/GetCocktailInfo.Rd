@@ -4,7 +4,7 @@
 \alias{GetCocktailInfo}
 \title{Search for cocktail information based on cocktail IDs}
 \usage{
-GetCocktailInfo(cocktailID = 11007, precise = FALSE)
+GetCocktailInfo(cocktailID = 11007, precise = TRUE)
 }
 \arguments{
 \item{cocktailID}{asks the user to key in the cocktail ID, the ID list can be obtained

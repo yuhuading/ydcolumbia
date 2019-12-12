@@ -4,7 +4,7 @@
 \alias{GetAllCocktails}
 \title{Obtain all available cocktail information from the API}
 \usage{
-GetAllCocktails(precise = FALSE)
+GetAllCocktails(precise = TRUE)
 }
 \arguments{
 \item{precise}{parameter precise ask if the user want the result in precise format, if
