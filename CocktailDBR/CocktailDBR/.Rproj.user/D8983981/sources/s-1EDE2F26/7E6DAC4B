@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1576117327420.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7E6DAC4B",
+    "lastKnownWriteTime" : 1576116868,
+    "last_content_update" : 1576116868,
+    "path" : "D:/QMSS_Fall_2019/5072_Modern_Data_Structure/CocktailDBR/CocktailDBR/vignettes/CocktailDBR-vignette.Rmd",
+    "project_path" : "vignettes/CocktailDBR-vignette.Rmd",
+    "properties" : {
+        "cursorPosition" : "61,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
